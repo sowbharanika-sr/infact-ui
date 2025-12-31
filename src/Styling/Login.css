@@ -8,12 +8,12 @@
 
 /* shift card slightly right like figma */
 .login-card {
-  transform: translateX(420px);
+  transform: translateX(380px);
 }
 
 
 .login-card {
-  width: 340px;
+  width: 330px;
   height:540px;
   font-family: "SF Pro Display",sans-serif;
   background: #ffffff;
