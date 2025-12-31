@@ -1,0 +1,410 @@
+.chat-page {
+   font-family: "SF Display", sans-serif;
+  display: flex;
+  height: calc(100vh - 120px);
+  background: #f7f8fb;
+  gap: 16px;
+  padding: 16px;
+  
+}
+.chat-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-page-wrapper {
+  background: #f7f8fb;
+  padding: 16px;
+}
+
+
+/* LEFT */
+.chat-sidebar {
+  font-family: "SF Display", sans-serif;
+  width: 260px;
+  height: auto;
+  align-self: stretch;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px 16px;
+}
+
+.sidebar-title {
+   font-family: "SF Display", sans-serif;
+  font-size: 20px;
+  font-weight: 510;
+  color:#202020;
+  margin: 0 0 8px 0;
+  margin-bottom: auto;
+  
+}
+
+.sidebar-search input {
+   font-family: "SF Display", sans-serif;
+  width: 90%;
+  height: 34px;
+  border-radius: 20px;
+  background: #F6F5FA;
+  border: 1px solid #e5e7eb;
+  padding: 0 12px;
+  font-size: 12px;
+  color:#646464;
+  margin-top:0px;
+  margin-bottom: 1px;
+}
+.search-icon {
+  width:20px;
+  position:relative;
+  top:33px;
+  left:8px;
+  color: #848484;
+}
+.input-search {
+  position: center;
+  padding-left:50px;
+
+
+}
+.horizontal-line{
+  color:#646464;
+}
+.student-list {
+   font-family: "SF Display", sans-serif;
+   font-size: 16px;
+  list-style: none;
+  padding: 0;
+  margin-top: 6px;
+  color:#646464;
+}
+
+
+.student {
+   font-family: "SF Display", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.student.active {
+  background: #ecfdfb;
+  color:#1D1D1D;
+  font-weight: 510;
+}
+
+.student img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* RIGHT */
+.chat-window {
+   font-family: "SF Display", sans-serif;
+  flex: 1;
+  
+  position: relative;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* HEADER */
+.chat-header {
+  
+   font-family: "SF Display", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: #f7f8fb;
+  border-bottom: 1px solid #f0f0f0;
+  height:40px;
+  margin: 0px;
+  min-height: 56px;
+
+}
+.chat-header p{
+  color:#888888;
+}
+.chat-user {
+  display: flex;
+  align-items: center;          /* 🔥 aligns avatar + text block */
+  gap: 10px;
+}
+
+.chat-user > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;          /* 👈 controls spacing cleanly */
+}
+
+.chat-user h4 {
+  font-size: 18px;
+  font-weight: 590;
+  margin: 0;
+}
+
+.chat-user p {
+  font-size: 14px;
+  color: #888888;
+  margin: 0;
+}
+
+.chat-user img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.call-btn {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 13px;
+  background: #B9F0EB;
+   color: #1DC8BA;
+   font-weight: bold;
+   border-radius: 20px;
+   border: none;
+    cursor: pointer;
+
+}
+
+.msg-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.msg-row.left {
+  justify-content: flex-start;
+}
+
+.msg-row.right {
+  justify-content: flex-end;
+}
+
+.msg-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.call {
+  color:#1dc8ba;
+  width: 17px;
+  height: 22px;
+  margin-right: 5px;
+  border:#1dc8ba;
+
+}
+
+/* MESSAGES */
+.chat-messages {
+   font-family: "SF Display", sans-serif;
+  flex: 1;
+   padding: 24px;
+  padding-top: 20px;   /* 🔥 THIS IS THE KEY */
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.msg {
+   font-family: "SF Display", sans-serif;
+  max-width: 60%;
+  padding: 12px 16px 22px;
+  border-radius: 14px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.msg-time {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+
+  font-size: 10px;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+
+.msg.left {
+  background: #f1f5f9;
+}
+
+.msg.right {
+  background: #f1f5f9;
+  margin-left: auto;
+}
+.more-icon {
+  
+  cursor: pointer;
+  color: #888888;
+}
+.chat-day-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.chat-day-divider::before,
+.chat-day-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb; /* light grey line */
+}
+
+.chat-day-divider span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+/* HEADER AVATAR ONLY */
+.header-avatar {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+
+.header-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 🟢 ACTIVE DOT (HEADER ONLY) */
+.header-avatar.online::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+
+  width: 10px;
+  height: 10px;
+  background: #22c55e;       /* Figma green */
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+
+/* INPUT */
+.chat-input-box {
+  margin-top: auto;        /* PUSHES TO BOTTOM */
+  border: 1.5px solid #36e3d5;
+  border-radius: 14px;
+  padding: 14px;
+  background: #F8F8F8;
+}
+
+/* INPUT ROW */
+.chat-input-row {
+  font-family: "SF Display", sans-serif;
+  display: flex;
+  align-items: center;
+  background: #F8F8F8;
+  gap: 10px;
+}
+
+.chat-input {
+   font-family: "SF Display", sans-serif;
+  flex: 1;
+  border: none;
+  background: #F8F8F8;
+  outline: none;
+  font-size: 15px;
+}
+
+/* DIVIDER */
+.horizontal-line {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 10px 0;
+}
+
+/* ACTIONS */
+.chat-input-actions {
+   font-family: "SF Display", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-actions {
+   font-family: "SF Display", sans-serif;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 14px;
+  color: #505050;
+}
+
+.right-actions {
+   font-family: "SF Display", sans-serif;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.char-count {
+   font-family: "SF Display", sans-serif;
+  font-size: 12px;
+  color: #4A4A4A;
+}
+
+/* ICONS */
+.mic-icon {
+  color: #848484;
+  cursor: pointer;
+}
+
+.send-icon {
+  color: #1DC8BA;
+  width: 36px;
+  cursor: pointer;
+}
+.page-title-bar {
+    font-family: "SF Display", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 16px 24px;
+  background: #f7f8fb;
+
+  font-size: 30px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.page-title-text {
+    font-family: "SF Display", sans-serif;
+  font-weight: 550;
+  font-size: 21px;
+}
+
+.divider {
+  margin: 0 6px;
+  color:#797979;
+  font-weight: 100;
+}
+
+.back-arrow {
+  font-size: 18px;
+  cursor: pointer;
+}

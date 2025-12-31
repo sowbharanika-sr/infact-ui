@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "SF Pro Display", sans-serif;
 }
 
 .App-logo {
@@ -36,3 +37,9 @@
     transform: rotate(360deg);
   }
 }
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+

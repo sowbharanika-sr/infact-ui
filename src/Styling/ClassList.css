@@ -1,0 +1,5 @@
+/* Only for clickable table text (Class / Student Name) */
+.clickable-cell {
+  cursor: pointer;
+}
+

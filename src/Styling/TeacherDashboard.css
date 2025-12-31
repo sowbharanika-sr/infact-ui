@@ -1,0 +1,51 @@
+/* ================= GREETING ================= */
+
+.dashboard-greeting {
+  margin-top: 8px;
+  margin-bottom: 28px;
+  padding: 20px 22px 0 22px; /* unified padding like Figma */
+}
+
+.dashboard-greeting h2 {
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 6px 0; /* FIXED */
+}
+
+.dashboard-greeting h2 span {
+  color: #10ACA0; /* your teal */
+}
+
+.dashboard-greeting p {
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 14px;
+  color: #5B5B5B;
+  max-width: 700px;
+  margin: 0;
+  line-height: 1.6;
+  padding-left: 5px;
+  padding-top: 10px;
+}
+
+/* ================= CHAT GREY CONTAINER ================= */
+
+.chat-section {
+  background: #f7f9fb;
+  padding: 15px;
+  border-radius: 20px;
+  padding-top: 0%;
+
+  /* THIS IS THE FIX */
+  min-height: 520px;
+}
+
+
+/* ================= CHAT WHITE CARD ================= */
+
+.chat-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 21px rgba(211, 211, 211, 0.25);
+}

@@ -1,0 +1,9 @@
+/* Only for clickable table text (Class / Student Name) */
+.clickable-cell {
+  cursor: pointer;
+}
+.page-title-text{
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+}
