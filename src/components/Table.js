@@ -11,9 +11,7 @@ const Table = ({
   subtitle,
   columns,
   data,
-  
 
-  // 🔽 TOOLBAR PROPS
   searchValue,
   onSearchChange,
   onFilterClick,
