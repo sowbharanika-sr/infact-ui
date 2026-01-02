@@ -11,10 +11,69 @@ const ChatWindow = () => {
       minute: "2-digit",
     });
 
-  // ✅ NO DEFAULT MESSAGE
+  
+  const [isListening, setIsListening] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  /* ================= Q & A DATA ================= */
+   const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = SpeechRecognition
+  ? new SpeechRecognition()
+  : null;
+
+if (recognition) {
+  recognition.continuous = false;
+  recognition.lang = "en-US";
+}
+
+const handleMic = () => {
+  if (!recognition) {
+    alert("Speech recognition not supported in this browser.");
+    return;
+  }
+
+  // If already listening → stop
+  if (isListening) {
+    recognition.stop();
+    setIsListening(false);
+    return;
+  }
+
+  recognition.start();
+  setIsListening(true);
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    setInput((prev) => (prev ? prev + " " : "") + transcript);
+  };
+
+  recognition.onend = () => {
+    setIsListening(false); // VERY IMPORTANT
+  };
+
+  recognition.onerror = (event) => {
+    console.error("Speech recognition error:", event.error);
+    setIsListening(false);
+  };
+};
+
+const handleFileUpload = (e) => {
+  const files = Array.from(e.target.files);
+
+  files.forEach((file) => {
+    const fileMsg = {
+      sender: "user",
+      text: ` ${file.name}`,
+      time: getCurrentTime(),
+    };
+
+    setMessages((prev) => [...prev, fileMsg]);
+  });
+};
+
+
+
   
   const handleSend = async () => {
   if (!input.trim()) return;
@@ -125,7 +184,7 @@ const ChatWindow = () => {
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
           />
 
-          <MicNoneIcon className="mic-icon" />
+          <MicNoneIcon className="mic-icon" onClick={handleMic}/>
           <SendIcon className="send-icon" onClick={handleSend} />
         </div>
 
@@ -133,11 +192,23 @@ const ChatWindow = () => {
 
         <div className="chat-input-actions">
           <div className="left-actions">
-            <img src="/images/circlepin.png" alt="attach" />
+             <img
+               src="/images/circlepin.png"
+               alt="attach"
+               onClick={() => document.getElementById("fileInput").click()}
+            />
             <span>Attach</span>
+
 
             <img src="/images/document.png" alt="word" />
             <span>Generate Word</span>
+            <input
+              type="file"
+              id="fileInput"
+              style={{ display: "none" }}
+              multiple
+              onChange={(e) => handleFileUpload(e)}
+            />
           </div>
 
           <div className="right-actions">
