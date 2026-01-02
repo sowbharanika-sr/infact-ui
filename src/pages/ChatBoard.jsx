@@ -86,7 +86,7 @@ const handleFileUpload = (e) => {
   setInput("");
 
   try {
-    const res = await fetch("https://infact-backend.onrender.com/ask", {
+    const res = await fetch("https://infact-backend-1.onrender.com/ask", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question: userMsg.text }),
