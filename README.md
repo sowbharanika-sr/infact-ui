@@ -1,7 +1,6 @@
 # Infact UI
 
-🔗 Live Demo: https://infact-ui.vercel.app/
-
+🔗 Live Demo: https://chipper-scone-44215c.netlify.app/
 ## Description
 A responsive frontend UI built using React, focusing on clean layout,
 component structure, and modern styling.
